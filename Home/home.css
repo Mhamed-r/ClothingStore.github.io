@@ -1,0 +1,443 @@
+@font-face {
+    font-family: 'Roboto';
+    src: url('../Fonts/Roboto/static/Roboto-ExtraBold.ttf');
+  }
+  html { scroll-behavior: smooth; }
+* {
+    margin: 0;
+    padding: 0;
+
+    }
+    body {
+    font-family: Arial, Helvetica, sans-serif;
+    }
+
+    /* /////////////////////NavBar///////////////////// */
+.mynav{
+position: fixed;
+}
+.mynav a:hover{
+
+    color: #A67A4B;
+}
+/* /////////////////////banner///////////////////// */
+.banner{
+    overflow: hidden; 
+    position: relative;
+    text-align: center;
+
+}
+.banner img{
+    width: 100%;
+
+}
+.image2,.image3{
+    display: none;
+}
+/* /////////////////////Slider///////////////////// */
+
+.Slider {
+
+    display: flex;
+    text-align: center;
+    position: relative;
+
+}
+.Slider-text{
+position:absolute;
+width: 50%;
+top: 30%;
+left: 25%;
+color: white;
+
+}
+.prev,.next{
+height: 0;
+position: absolute;
+top: 50%;
+color: white;
+font-size: 2rem;
+cursor: pointer;
+
+}
+.prev{
+left: 0;
+}
+.next{
+  right: 0;
+}
+.prev:hover,.next:hover{
+    color: #A67A4B;
+}
+.Slider-text p{
+    font-size: 5.2vw;
+    line-height: 13vh;
+font-family: "Roboto";
+}
+.link{
+     padding: 10px 45px;
+    color:white;
+    font-size: 18px;
+    border-radius:25px;
+    text-decoration: none;
+    border:2px solid white;
+    transition: all 0.1s ease-in;
+    cursor: pointer;
+    transition: all 0.1s ease-in;}
+.link:hover{
+    
+    background-color: #A67A4B;
+    border: 2px solid #A67A4B;
+
+    
+}
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+  }
+  .active, .dot:hover {
+    background-color: #717171;
+  }
+/* @keyframes slide-right {
+    0% { 
+        transform: translatex(40px);
+    } 
+    100% { 
+        transform: translatex(0px);
+
+     
+    } 
+} */
+/* /////////////////////underSlider///////////////////// */
+.underSliderImages{
+    display: flex;
+    margin:0 auto;
+    justify-content: space-around;
+}
+
+.underSliderImage1,.underSliderImage2{
+    overflow: hidden;
+    display: flex;
+    position: relative;
+
+
+}
+.underSliderImage2{
+    margin-left: 4%;
+}
+.underSliderImages img{
+    width: 100%;
+
+}
+
+.underSliderImage-text{
+    font-size: 5vw;
+    font-family: "Roboto";
+    color: white;
+    position: absolute;
+    z-index: 1;
+    margin-left: 8vw;
+    margin-top: 40vh;
+    text-decoration: none;
+
+
+}
+.underSliderImage-text:hover{
+    color: #A67A4B;
+    cursor: pointer;
+
+}
+
+  
+.underSliderImages img:hover{
+    transform: scale(1.1);
+    transition: all 0.7s;
+}
+
+
+
+
+/* /////////////////////PRODUCTS///////////////////// */
+  .underImages {
+    text-align: center;
+    background-color: #F0F0F0;
+    padding: 2rem 0;
+  }
+  
+  .products {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 50px;
+    padding: 2rem;
+    max-width: 1500px;
+    margin: 0 auto;
+  }
+  
+  .product {
+    background-color: white;
+    border: 8px solid white;
+    border-radius: 4px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .product-img {
+    height: 250px;
+    background-color: #F0F0F0;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    margin-bottom: 1rem;
+    overflow: hidden; 
+    display: flex;
+    align-items: flex-end;
+  }
+  
+  .product-name, .product-price {
+    margin: 0.5rem 0;
+    padding: 0 1rem;
+  }
+  
+  .product-price {
+    font-weight: bold;
+    color: #333;
+    font-size: 1.2rem;
+  }
+.product1{
+    background-image: url(../Images/product1.png);
+}
+.product2{background-image: url(../Images/product2.png);
+position: relative;}
+.product3{background-image: url(../Images/product3.png);}
+.product4{background-image: url(../Images/product4.png);}
+
+.product1:hover{ background-image: url(../Images/product1Hover.png);}
+.product2:hover{ background-image: url(../Images/product2Hover.png);}
+.product3:hover{ background-image: url(../Images/product3Hover.png);}
+.product4:hover{ background-image: url(../Images/product4Hover.png);}
+
+.productLink {
+
+    text-decoration: none;
+    background-color: rgba(217, 216, 216, 0.614);
+    color: black;
+    width: 100em;
+    padding: 0.6em 5.5em;
+    transform: translateY(100%);
+    transition: all 0.3s ease;
+    opacity: 0;
+}
+.Best-Seller{
+position: absolute;
+top: 0;
+left: 0;
+padding: 0 0.6em;
+color: white;
+background-color: #A67A4B;
+
+}
+.product-img:hover .productLink{
+    display: block;
+    transform: translateY(0);
+    opacity: 1;
+
+}
+
+
+.product-Shoplink{
+
+    padding: 10px 35px;
+    color:#A67A4B;
+    font-size: 18px;
+    border-radius:25px;
+    text-decoration: none;
+    border:2px solid #A67A4B;
+    transition: all 0.1s ease-in;
+    cursor: pointer;
+    transition: all 0.1s ease-in;
+}
+
+.product-Shoplink:hover{
+    
+    background-color: #A67A4B;
+    color: white;    
+}
+
+
+
+
+
+
+
+
+
+
+@media  (max-width: 1024px) {
+    .Slider-text {
+        width: 60%; 
+        left: 20%;
+    }
+    .Slider-text p {
+        font-size: 4.5vw; 
+    }
+    .Slider-text a {
+        font-size: 16px; 
+        padding: 8px 40px;
+    }
+   
+
+    .underSliderImage-text {
+        font-size: 4.5vw; 
+        left: 10%; 
+        bottom: 50%;
+    }
+    .products {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 40px;
+    }
+}
+
+
+
+@media  (max-width: 768px) {
+    html {
+        font-size: 14px;
+    }
+    .Slider-text {
+        width: 70%;
+        left: 15%; 
+    }
+    .Slider-text p {
+        font-size: 4vw; 
+    }
+    .Slider-text a {
+        font-size: 16px; 
+        padding: 8px 35px; 
+    }
+    .underSliderImage-text {
+        font-size: 4vw; 
+        left: 10%; 
+        bottom: 50%;
+
+    }
+    .product-img {
+        height: 250px;
+    }
+    .products {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+
+  
+}
+    
+@media  (max-width: 480px) {
+    .next,.prev{
+        font-size: 15px;
+    }
+    .Slider-text {
+        width: 90%; 
+        left: 5%;
+    }
+    .Slider-text p {
+        font-size: 3.5vw; 
+        line-height: 7vh; 
+    }
+    .Slider-text a {
+        font-size: 14px; 
+        padding: 6px 25px;
+    }
+    .underSliderImage-text {
+        width: 90%; 
+        font-size: 3.5vw; 
+        margin-left: 8vw; 
+        margin-top: 30vh;
+    }
+    .products {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+}
+
+
+
+    /* /////////////////////Responsive///////////////////// */
+    /* .container {
+        display: grid;
+        grid-template-rows: 80px auto 1fr auto 50px;
+        grid-template-columns: 1fr 4fr 1fr;
+        min-height: 100vh;
+        grid-template-areas:
+        "header header header"
+        "left-aside banner right-aside"
+        "left-aside main right-aside"
+        "left-aside low-content right-aside"
+        "footer footer footer";
+        gap: 10px;
+        padding: 10px;
+        }
+
+        header {
+        grid-area: header;
+        background-color: #ffa500;
+        }
+        .banner {
+        grid-area: banner;
+        background-color: #ff6b6b;
+        }
+        .left-aside {
+        grid-area: left-aside;
+        background-color: #51cf66;
+        }
+        main {
+        grid-area: main;
+        background-color: #339af0;
+        }
+        .right-aside {
+        grid-area: right-aside;
+        background-color: #ffd43b;
+        }
+        .low-content {
+        grid-area: low-content;
+        background-color: #51cf66;
+        }
+        footer {
+        grid-area: footer;
+        background-color: #339af0;
+        }
+ 
+        .container > * {
+        padding: 20px;
+        border-radius: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-weight: bold;
+        }
+    
+        @media (max-width: 678px) {
+        .container {
+        grid-template-rows: auto auto auto minmax(300px, 1fr) auto auto auto;
+        grid-template-columns: 1fr;
+        grid-template-areas:
+        "header"
+        "banner"
+        "left-aside"
+        "main"
+        "right-aside"
+        "low-content"
+        "footer";
+        }
+        main {
+        min-height: 400px; 
+        }
+        } */
