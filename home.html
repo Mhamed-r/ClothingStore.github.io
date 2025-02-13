@@ -20,7 +20,7 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <title>Document</title>
+    <title>Clothing Store</title>
   </head>
   <body>
     <div>
@@ -280,9 +280,16 @@
         <div class="modal-image"></div>
         <h2 class="modal-product-name"></h2>
         <p class="modal-product-price"></p>
+
+        <div class="quantity-controls">
+          <button class="quantity-btn minus">-</button>
+          <input type="number" class="quantity-input" value="1" min="1" />
+          <button class="quantity-btn plus">+</button>
+        </div>
+
         <div class="modal-buttons">
           <button class="add-to-cart">Add to Cart</button>
-          <button class="close-modal">Close</button>
+          <button class="cancel-modal">Cancel</button>
         </div>
       </div>
     </div>

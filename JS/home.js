@@ -2,6 +2,15 @@ let sliderImages = document.querySelectorAll(".slide");
 let dots = document.querySelectorAll(".dot");
 let current = 0;
 
+document.addEventListener('DOMContentLoaded', () => {
+
+    displayUsername();
+    updateCartCount(); 
+    if(window.location.pathname.includes('cart.html')) {
+        displayCartItems();
+    }
+});
+if(window.location.pathname.includes('home.html')) {
 function reset() {
     for (let i = 0; i < sliderImages.length; i++) {
         sliderImages[i].style.display = "none";
@@ -29,7 +38,7 @@ function slideRight() {
     dots[current].classList.add("active");
 }
 setInterval(slideRight, 4000);
-
+}
 function Gotop(){
 window.scrollTo(0, 0);
 
@@ -54,7 +63,7 @@ console.log(username);
         `<a class='nav-link'><i class='fa-solid fa-circle-user'></i> ${username}</a>`;
     }
 }
-window.onload=displayUsername;
+
 window.onscroll =function(){
 
         if(scrollY > 550)  {
@@ -115,7 +124,7 @@ let cart=JSON.parse(localStorage.getItem('cart'))||[];
 for(let i = 0; i < product.length; i++) {
     quickview[i].addEventListener('click', function() {
       modal.style.display = 'block';
-      let backgroundImage  =window.getComputedStyle(product[i].querySelector('.product-img')).backgroundImage;
+      let backgroundImage =window.getComputedStyle(product[i].querySelector('.product-img')).backgroundImage;
       let name = product[i].querySelector('.product-name').textContent;
       let price = product[i].querySelector('.product-price').textContent;
       productImage.style.backgroundImage = backgroundImage;
@@ -136,7 +145,6 @@ modalcontent.addEventListener('click', (e) => {
       
         input.value = value;
 });
-
 
 document.querySelector('.add-to-cart').addEventListener('click', function() {
     addToCart(modalcontent.getAttribute('data-product-id')); 
@@ -190,141 +198,42 @@ cancel.addEventListener('click', function(){
 
 
 
-
-
-
-// document.querySelectorAll('.product').forEach(product => {
-//     product.addEventListener('click', function() {
-//       const modal = document.getElementById('quickViewModal');
-//       modal.dataset.target = this.dataset.name;
-//     });
-//   });
-// document.querySelectorAll('.productLink').forEach(link => {
-//     link.addEventListener('click', function(e) {
-//       e.preventDefault();
-//       const product = this.closest('.product');
-//       const productName = product.dataset.name;
-//       const modal = document.getElementById('quickViewModal');
-//       if(productName == modal.dataset.target) {
-//         const productImg = product.querySelector('.product-img');
-//         const productPrice = product.querySelector('.product-price').textContent;
-//         const productTitle = product.querySelector('.product-name').textContent;
-//         const productImage = window.getComputedStyle(productImg).backgroundImage;
-//         document.querySelector('.modal-product-name').textContent = productTitle;
-//         document.querySelector('.modal-product-price').textContent = productPrice;
-//         document.querySelector('.modal-image').style.backgroundImage = productImage;
-//         modal.style.display = 'block';
-//       }
-//     });
-//   });
+function displayCartItems() {
+    let cartItems = document.querySelector('.cart-items');
+    let totalPriceElement = document.getElementById('cart-total-price');
+    cartItems.innerHTML = '';
+    let total = 0;
+    cart.forEach((item) => {
+        let cartItem = document.createElement('div');
+        cartItem.className = 'cart-item';
+        cartItem.innerHTML = `
+            <div class="cart-item-image" style=background-image:${item.productImage}></div>
+            <div class="cart-item-info">
+                <h4>${item.productName}</h4>
+                <p class="cart-item-price">$${item.productPrice} x ${item.productQuantity}</p>
+                <p>Total: $${item.productTotal.toFixed(2)}</p>
+            </div>
   
-//   document.querySelectorAll('.close, .close-modal').forEach(button => {
-//     button.addEventListener('click', () => {
-//       document.getElementById('quickViewModal').style.display = 'none';
-//     });
-//   });
-  
-//   window.onclick = (e) => {
-//     if(e.target == document.getElementById('quickViewModal')) {
-//       document.getElementById('quickViewModal').style.display = 'none';
-//     }
-//   };
-
-
-
-
-
-//   function addToCart(product) {
-//     const cart = JSON.parse(localStorage.getItem('cart')) || [];
-//     const existingItem = cart.find(item => item.id === product.id);
-    
-//     if(existingItem) {
-//       existingItem.quantity += product.quantity;
-//     } else {
-//       cart.push(product);
-//     }
-    
-//     localStorage.setItem('cart', JSON.stringify(cart));
-//     alert(`Added ${product.quantity} ${product.name} to cart!`);
-//   }
-  
-//   document.querySelector('.modal-content').addEventListener('click', (e) => {
-//     const input = document.querySelector('.quantity-input');
-//     let value = parseInt(input.value) || 1;
-  
-//     if(e.target.classList.contains('plus')) {
-//       value++;
-//     } else if(e.target.classList.contains('minus') && value > 1) {
-//       value--;
-//     }
-  
-//     input.value = value;
-//   });
-//   document.querySelector('.add-to-cart').addEventListener('click', () => {
-//     const product = {
-//       id: document.getElementById('quickViewModal').dataset.target,
-//       name: document.querySelector('.modal-product-name').textContent,
-//       price: document.querySelector('.modal-product-price').textContent,
-//       image: document.querySelector('.modal-image').style.backgroundImage,
-//       quantity: parseInt(document.querySelector('.quantity-input').value) || 1
-//     };
-  
-//     addToCart(product);
-//     document.getElementById('quickViewModal').style.display = 'none';
-//     updateCartCount();
-//   });
-  
-
-//   if(!localStorage.getItem('cart')) {
-//     localStorage.setItem('cart', JSON.stringify([]));
-//   }
-
-//   function updateCartCount() {
-//     const cart = JSON.parse(localStorage.getItem('cart')) || [];
-//     const count = cart.reduce((sum, item) => sum + item.quantity, 0);
-//     document.querySelector('.cart-count').textContent = count;
-//   };
-
-//   updateCartCount();
-
-  
-//   function displayCartItems() {
-//     const cart = JSON.parse(localStorage.getItem('cart')) || [];
-//     const cartContainer = document.querySelector('.cart-items');
-//     const totalPriceElement = document.getElementById('cart-total-price');
-    
-//     cartContainer.innerHTML = '';
-//     let total = 0;
-
-//     cart.forEach((item, index) => {
-//         const itemElement = document.createElement('div');
-//         itemElement.className = 'cart-item';
-//         itemElement.innerHTML = `
-//             <div class="cart-item-image" style="background-image: ${item.image}"></div>
-//             <div class="cart-item-info">
-//                 <h4>${item.name}</h4>
-//                 <p class="cart-item-price">${item.price} x ${item.quantity}</p>
-//                 <p>Total: $${(parseFloat(item.price.replace('$','')) * item.quantity)}</p>
-//             </div>
-//             <button class="remove-item" data-index="${index}">&times;</button>
-//         `;
+        `;
         
-//         cartContainer.appendChild(itemElement);
-//         total += parseFloat(item.price.replace('$','')) * item.quantity;
-//     });
+        cartItems.appendChild(cartItem);
+        total += item.productTotal;
+       
+    });
+    totalPriceElement.textContent = total.toFixed(2);
+}
 
-//     totalPriceElement.textContent = total.toFixed(2);
 
-//     document.querySelectorAll('.remove-item').forEach(button => {
-//         button.addEventListener('click', function() {
-//             const index = parseInt(this.dataset.index);
-//             const cart = JSON.parse(localStorage.getItem('cart'));
-//             cart.splice(index, 1);
-//             localStorage.setItem('cart', JSON.stringify(cart));
-//             displayCartItems();
-//             updateCartCount();
-//         });
-//     });
-// }
+
+
+
+
+
+
+
+
+
+
+
 
 

@@ -20,14 +20,14 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <title>Document</title>
+    <title>Cart</title>
   </head>
   <body>
     <!------------------Navbar---------------->
     <header>
       <nav class="navbar navbar-expand-lg bg-body-tertiary mynav p-3">
         <div class="container">
-          <a class="navbar-brand" href="#">Clothing Store</a>
+          <a class="navbar-brand" href="home.html">Clothing Store</a>
           <button
             class="navbar-toggler"
             type="button"
@@ -42,7 +42,7 @@
           <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav ms-auto">
               <li class="nav-item">
-                <a class="nav-link" href="#">Home</a>
+                <a class="nav-link" href="home.html">Home</a>
               </li>
               <li class="nav-item dropdown ps-4">
                 <a
@@ -69,7 +69,7 @@
                 </ul>
               </li>
               <li class="nav-item ps-4">
-                <a class="nav-link" href="#Contact">Contact</a>
+                <a class="nav-link" href="home.html">Contact</a>
               </li>
               <li class="nav-item ps-4" id="usernameDisplay">
                 <a class="nav-link" href="LogIn.html"
@@ -79,12 +79,12 @@
               <li class="nav-item ps-4">
                 <a class="nav-link" href="cart.html">
                   <i class="fa-solid fa-basket-shopping"></i>
-                  cart<span
+                  cart
+                  <span
                     class="cart-count badge badge-warning ms-1"
                     id="lblCartCount"
+                    >0</span
                   >
-                    0
-                  </span>
                 </a>
               </li>
             </ul>
@@ -101,6 +101,9 @@
         <h3>Total: $<span id="cart-total-price">0.00</span></h3>
       </div>
     </div>
+    <a onclick="Gotop()" class="scroll-to-top">
+      <i class="fa-solid fa-chevron-up"></i
+    ></a>
     <script src="JS/home.js"></script>
     <script src="JS/bootstrap.bundle.js"></script>
   </body>
