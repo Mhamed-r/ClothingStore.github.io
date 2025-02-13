@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="Css/home.css" />
+    <link rel="stylesheet" type="text/css" href="Css/products.css" />
+    <link rel="stylesheet" type="text/css" href="Css/bootstrap.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>Document</title>
+  </head>
+  <body>
+    <!------------------Navbar---------------->
+    <header>
+      <nav class="navbar navbar-expand-lg bg-body-tertiary mynav p-3">
+        <div class="container">
+          <a class="navbar-brand" href="#">Clothing Store</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="home.html">Home</a>
+              </li>
+              <li class="nav-item dropdown ps-4">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Shop
+                </a>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a class="dropdown-item" onclick="showShoes()">Shoes</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" onclick="showAccessories()"
+                      >Accessories</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" onclick="showTops()">Tops</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item ps-4">
+                <a class="nav-link" href="#">Contact</a>
+              </li>
+              <li class="nav-item ps-4" id="usernameDisplay">
+                <a class="nav-link" href="LogIn.html"
+                  ><i class="fa-solid fa-circle-user"></i> Log in</a
+                >
+              </li>
+
+              <li class="nav-item ps-4">
+                <a class="nav-link" href="cart.html">
+                  <i class="fa-solid fa-basket-shopping"></i>
+                  cart<span
+                    class="cart-count badge badge-warning ms-1"
+                    id="lblCartCount"
+                  >
+                    0
+                  </span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <!------------------Products---------------->
+    <div class="Shop">
+      <h1 class="text-center mt-2">All Products</h1>
+      <div class="Shoplink text-center mt-4">
+        <a class="product-Shoplink" onclick="showall()">All Products</a>
+        <a class="product-Shoplink" onclick="showTops()">Tops</a>
+        <a class="product-Shoplink" onclick="showShoes()">Shoes</a>
+        <a class="product-Shoplink" onclick="showAccessories()">Accessories </a>
+      </div>
+      <div class="products">
+        <div class="product Tops" id="p-1">
+          <div class="product7 product-img">
+            <a class="productLink" href="#">Quick View</a>
+          </div>
+
+          <p class="product-name">TACVASEN Men's Bomber Jacket</p>
+          <p class="product-price">$33.98</p>
+        </div>
+        <div class="product Accessories" id="p-2">
+          <div class="product2 product-img">
+            <span class="Best-Seller">Best Seller</span>
+            <a class="productLink" href="#">Quick View</a>
+          </div>
+
+          <p class="product-name">GOLDEN HOUR Mens Watch</p>
+          <p class="product-price">$20.99</p>
+        </div>
+        <div class="product Shoes" id="p-3">
+          <div class="product1 product-img">
+            <a class="productLink" href="#">Quick View</a>
+          </div>
+
+          <p class="product-name">Tam's Suede</p>
+          <p class="product-price">$19.99</p>
+        </div>
+        <div class="product Shoes" id="p-4">
+          <div class="product5 product-img">
+            <a class="productLink" href="#">Quick View</a>
+          </div>
+
+          <p class="product-name">Testa Toro Basic</p>
+          <p class="product-price">$29.99</p>
+        </div>
+
+        <div class="product Tops" id="p-5">
+          <div class="product9 product-img">
+            <a class="productLink" href="#">Quick View</a>
+          </div>
+
+          <p class="product-name">COOFANDY Men's Shirt</p>
+          <p class="product-price">$16.99</p>
+        </div>
+        <div class="product Accessories" id="p-6">
+          <div class="product10 product-img">
+            <a class="productLink" href="#">Quick View</a>
+          </div>
+
+          <p class="product-name">BULLCAPTAIN RFID Wallets</p>
+          <p class="product-price">$26.88</p>
+        </div>
+        <div class="product Tops" id="p-7">
+          <div class="product4 product-img">
+            <a class="productLink" href="#">Quick View</a>
+          </div>
+
+          <p class="product-name">Adidas Mens Hoodies Pullover</p>
+          <p class="product-price">$30.00</p>
+        </div>
+        <div class="product Shoes" id="p-8">
+          <div class="product12 product-img">
+            <a class="productLink" href="#">Quick View</a>
+          </div>
+
+          <p class="product-name">DREAM PAIRS</p>
+          <p class="product-price">$32.99</p>
+        </div>
+        <div class="product Accessories" id="p-9">
+          <div class="product13 product-img">
+            <a class="productLink" href="#">Quick View</a>
+          </div>
+
+          <p class="product-name">Ray-Ban RB3625</p>
+          <p class="product-price">$191.00</p>
+        </div>
+        <div class="product Tops" id="p-10">
+          <div class="product14 product-img">
+            <a class="productLink" href="#">Quick View</a>
+          </div>
+
+          <p class="product-name">JMIERR Men's Casual</p>
+          <p class="product-price">$26.99</p>
+        </div>
+        <div class="product Shoes" id="p-11">
+          <div class="product3 product-img">
+            <a class="productLink" href="#">Quick View</a>
+          </div>
+
+          <p class="product-name">Oxfords Shoes</p>
+          <p class="product-price">$35.99</p>
+        </div>
+        <div class="product Accessories" id="p-12">
+          <div class="product16 product-img">
+            <a class="productLink" href="#">Quick View</a>
+          </div>
+
+          <p class="product-name">PUMA Unisex Teamgoal</p>
+          <p class="product-price">$24.99</p>
+        </div>
+      </div>
+    </div>
+    <a onclick="Gotop()" class="scroll-to-top">
+      <i class="fa-solid fa-chevron-up"></i
+    ></a>
+    <!------------------AddToCart---------------->
+
+    <div id="quickViewModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <div class="modal-image"></div>
+        <h2 class="modal-product-name"></h2>
+        <p class="modal-product-price"></p>
+
+        <div class="quantity-controls">
+          <button class="quantity-btn minus">-</button>
+          <input type="number" class="quantity-input" value="1" min="1" />
+          <button class="quantity-btn plus">+</button>
+        </div>
+
+        <div class="modal-buttons">
+          <button class="add-to-cart">Add to Cart</button>
+          <button class="cancel-modal">Cancel</button>
+        </div>
+      </div>
+    </div>
+
+    <!---------------Cart------------------->
+    <!-- <div class="cart-container">
+      <h2>Your Cart</h2>
+      <div class="cart-items"></div>
+      <div class="cart-total">
+        <h3>Total: $<span id="cart-total-price">0.00</span></h3>
+      </div>
+    </div> -->
+    <!---------------------------------->
+
+    <script src="JS/bootstrap.bundle.js"></script>
+    <script src="JS/home.js"></script>
+  </body>
+</html>

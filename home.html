@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="Css/home.css" />
+    <link rel="stylesheet" type="text/css" href="Css/products.css" />
+
+    <link rel="stylesheet" type="text/css" href="Css/bootstrap.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+      <!------------------Navbar---------------->
+      <header>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary mynav p-3">
+          <div class="container">
+            <a class="navbar-brand" href="#">Clothing Store</a>
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarNavDropdown"
+              aria-controls="navbarNavDropdown"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+              <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Home</a>
+                </li>
+                <li class="nav-item dropdown ps-4">
+                  <a
+                    class="nav-link dropdown-toggle"
+                    href="#"
+                    role="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    Shop
+                  </a>
+                  <ul class="dropdown-menu">
+                    <li>
+                      <a class="dropdown-item" href="Products.html">Shoes</a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="Products.html"
+                        >Accessories</a
+                      >
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="Products.html">Tops</a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="nav-item ps-4">
+                  <a class="nav-link" href="#Contact">Contact</a>
+                </li>
+                <li class="nav-item ps-4" id="usernameDisplay">
+                  <a class="nav-link" href="LogIn.html"
+                    ><i class="fa-solid fa-circle-user"></i> Log in</a
+                  >
+                </li>
+                <li class="nav-item ps-4">
+                  <a class="nav-link" href="cart.html">
+                    <i class="fa-solid fa-basket-shopping"></i>
+                    cart<span
+                      class="cart-count badge badge-warning ms-1"
+                      id="lblCartCount"
+                    >
+                      0
+                    </span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </header>
+      <!------------------Slider---------------->
+
+      <div class="banner mt-2 container">
+        <div class="Slider">
+          <a class="prev" onclick="slideLeft()">
+            <i class="fa-solid fa-angles-left"></i>
+          </a>
+          <div class="slide image1">
+            <img src="/Images/image1.jpg" />
+          </div>
+          <div class="slide image2">
+            <img src="/Images/image2.jpg" />
+          </div>
+          <div class="slide image3">
+            <img src="/Images/image3.jpg" />
+          </div>
+          <a class="next" onclick="slideRight()">
+            <i class="fa-solid fa-angles-right"></i>
+          </a>
+          <div class="Slider-text">
+            <p>New Outerwear Collection</p>
+            <a class="link" href="#">Shop Now</a>
+          </div>
+        </div>
+        <br />
+        <div style="text-align: center">
+          <span class="dot active" onclick="currentSlide(0)"></span>
+          <span class="dot" onclick="currentSlide(1)"></span>
+          <span class="dot" onclick="currentSlide(2)"></span>
+        </div>
+      </div>
+      <!------------------underSlider---------------->
+
+      <main class="mt-5">
+        <div class="underSlider container">
+          <div class="underSliderImages">
+            <div class="underSliderImage1">
+              <a href="#" class="underSliderImage-text">Our Story</a>
+              <img src="/Images/image4.avif" />
+            </div>
+            <div class="underSliderImage2">
+              <a href="#" class="underSliderImage-text">Our Blog</a>
+              <img src="/Images/image5.avif" />
+            </div>
+          </div>
+        </div>
+        <!------------------products---------------->
+
+        <div class="underImages mt-5">
+          <div class="container">
+            <p>FEATURED PRODUCTS</p>
+            <div class="products">
+              <div class="product" data-name="p-3">
+                <div class="product1 product-img">
+                  <a class="productLink" href="#">Quick View</a>
+                </div>
+
+                <p class="product-name">Tam's Suede</p>
+                <p class="product-price">$19.99</p>
+              </div>
+              <div class="product" data-name="p-2">
+                <div class="product2 product-img">
+                  <span class="Best-Seller">Best Seller</span>
+                  <a class="productLink" href="#">Quick View</a>
+                </div>
+
+                <p class="product-name">GOLDEN HOUR Mens Watch</p>
+                <p class="product-price">$20.99</p>
+              </div>
+              <div class="product" data-name="p-11">
+                <div class="product3 product-img">
+                  <a class="productLink" href="#">Quick View</a>
+                </div>
+
+                <p class="product-name">Oxfords Shoes</p>
+                <p class="product-price">$35.99</p>
+              </div>
+              <div class="product" data-name="p-7">
+                <div class="product4 product-img">
+                  <a class="productLink" href="#">Quick View</a>
+                </div>
+                <p class="product-name">Adidas Mens Hoodies Pullover</p>
+                <p class="product-price">$30.00</p>
+              </div>
+            </div>
+            <br />
+            <a class="product-Shoplink">Shop All</a>
+          </div>
+        </div>
+        <!------------------Category---------------->
+
+        <div class="category mt-5">
+          <div class="category-item">
+            <img src="../Images/category-item1.jpg" />
+            <a href="../Products/Products.html" class="category-link">SHOES</a>
+          </div>
+          <div class="category-item">
+            <img src="../Images/category-item2.jpg" />
+            <a href="../Products/Products.html" class="category-link"
+              >ACCESSORIES</a
+            >
+          </div>
+          <div class="category-item">
+            <img src="../Images/category-item3.jpg" />
+            <a href="../Products/Products.html" class="category-link">TOPS</a>
+          </div>
+        </div>
+        <!------------------underCategory---------------->
+
+        <div class="underCategory">
+          <div class="FreeShipping">
+            <i class="fa-solid fa-arrows-rotate"></i>
+            <p>Free Shipping and Returns</p>
+          </div>
+          <div class="SecuredPayments">
+            <i class="fa-solid fa-lock"></i>
+            <p>Secured Payments</p>
+          </div>
+          <div class="CustomerService">
+            <i class="fa-solid fa-umbrella"></i>
+            <p>Customer Service</p>
+          </div>
+        </div>
+      </main>
+      <!------------------Footer---------------->
+
+      <footer class="mt-5">
+        <div class="footer">
+          <div class="contact-us" id="Contact">
+            <p><i class="fa-solid fa-phone"></i> Phone: +20 1103981706</p>
+            <p>
+              <i class="fa-solid fa-envelope"></i> Email:
+              MhamedReda244@gmail.com
+            </p>
+            <p>
+              <i class="fa-solid fa-location-dot"></i> Address: 123, Nile ST,
+              Cairo, Egypt
+            </p>
+          </div>
+
+          <div class="subscribe">
+            <p>Receive all our news and updates</p>
+            <label for="email">Email Address*</label>
+            <input type="email" placeholder="Enter your email" />
+
+            <div>
+              <input type="checkbox" class="form-check-input me-1" /><span
+                for="checkbox"
+                class="form-check-label"
+                >Yes, subscribe me to your newsletter.</span
+              >
+            </div>
+
+            <button>Subscribe</button>
+          </div>
+        </div>
+        <div class="footer-Social">
+          <a href="#"><i class="fa-brands fa-facebook"></i></a>
+          <a href="#"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+          <a href="#"><i class="fa-brands fa-twitter"></i></a>
+          <a href="#"><i class="fa-brands fa-youtube"></i></a>
+          <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+          <a href="#"><i class="fa-brands fa-snapchat"></i></a>
+        </div>
+        <div class="copyright">
+          <p>Copyright © 2025 Clothing Store</p>
+          <p>
+            All Rights Reserved
+            <a href="#">Mhamed Reda</a>
+          </p>
+          <p>
+            This website is made by
+            <a href="#">Mhamed Reda</a>
+          </p>
+        </div>
+        <a onclick="Gotop()" class="scroll-to-top">
+          <i class="fa-solid fa-chevron-up"></i
+        ></a>
+      </footer>
+    </div>
+    <!------------------AddToCart---------------->
+
+    <div id="quickViewModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <div class="modal-image"></div>
+        <h2 class="modal-product-name"></h2>
+        <p class="modal-product-price"></p>
+        <div class="modal-buttons">
+          <button class="add-to-cart">Add to Cart</button>
+          <button class="close-modal">Close</button>
+        </div>
+      </div>
+    </div>
+    <!---------------------------------->
+
+    <script src="JS/home.js"></script>
+    <script src="JS/bootstrap.bundle.js"></script>
+  </body>
+</html>
