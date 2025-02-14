@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" href="Css/home.css" />
     <link rel="stylesheet" type="text/css" href="Css/products.css" />
+    <link rel="stylesheet" type="text/css" href="Css/shipped.css" />
 
     <link rel="stylesheet" type="text/css" href="Css/bootstrap.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -92,14 +93,14 @@
         </div>
       </nav>
     </header>
-    <!------------------Cart---------------->
-
-    <div class="cart-container">
-      <h2>Your Cart</h2>
-      <div class="cart-items"></div>
-      <div class="cart-total">
-        <h3>Total: $<span id="cart-total-price">0.00</span></h3>
-        <a onclick="clear()" href="shipped.html" class="check-out">Check Out</a>
+    <!------------------order shipped---------------->
+    <div class="container text-center">
+      <div class="image">
+        <img src="Images/check.png" />
+      </div>
+      <div class="text">
+        <h1>Thank You!</h1>
+        <p>Your order is confirmed successfully.</p>
       </div>
     </div>
     <!------------------footer---------------->
@@ -152,9 +153,7 @@
           <a href="#">Mhamed Reda</a>
         </p>
       </div>
-      <a onclick="Gotop()" class="scroll-to-top">
-        <i class="fa-solid fa-chevron-up"></i
-      ></a>
+      <a class="scroll-to-top"> <i class="fa-solid fa-chevron-up"></i></a>
     </footer>
 
     <script src="JS/home.js"></script>

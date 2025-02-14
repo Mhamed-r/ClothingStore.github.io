@@ -60,8 +60,20 @@ function displayUsername() {
 console.log(username);
     if (loggedIn) {
         document.getElementById("usernameDisplay").innerHTML =
-        `<a class='nav-link'><i class='fa-solid fa-circle-user'></i> ${username}</a>`;
+        `<div class='nav-link d-flex align-items-center gap-2'>
+  <i class='fa-solid fa-circle-user'></i>
+  ${username}
+  <a class='ms-2 small text-muted text-decoration-none signout-link' onclick='signout()'>
+    Sign Out
+  </a>
+</div>`;
     }
+}
+function signout(){
+    document.cookie = 'username=; Path=/; Expires=Thu, 01 Jan 2000 00:00:01 GMT;';
+  document.cookie = 'loggedIn=; Path=/; Expires=Thu, 01 Jan 2000 00:00:01 GMT;';
+  localStorage.removeItem('cart');
+  window.location.href = 'login.html';
 }
 
 window.onscroll =function(){
@@ -195,35 +207,66 @@ cancel.addEventListener('click', function(){
     modal.style.display = 'none';
 });
 
-
-
-
 function displayCartItems() {
     let cartItems = document.querySelector('.cart-items');
     let totalPriceElement = document.getElementById('cart-total-price');
     cartItems.innerHTML = '';
     let total = 0;
-    cart.forEach((item) => {
+    
+    cart.forEach((item, index) => {
         let cartItem = document.createElement('div');
         cartItem.className = 'cart-item';
         cartItem.innerHTML = `
             <div class="cart-item-image" style=background-image:${item.productImage}></div>
             <div class="cart-item-info">
                 <h4>${item.productName}</h4>
+                <div class="quantity-controls">
+                    <button class="quantity-btn minus" data-index="${index}">-</button>
+                    <span class="quantity">${item.productQuantity}</span>
+                    <button class="quantity-btn plus" data-index="${index}">+</button>
+                </div>
                 <p class="cart-item-price">$${item.productPrice} x ${item.productQuantity}</p>
                 <p>Total: $${item.productTotal.toFixed(2)}</p>
             </div>
-  
+             <button class="remove-item" data-index="${index}"><i class="fas fa-trash"></i></button>
         `;
         
         cartItems.appendChild(cartItem);
         total += item.productTotal;
-       
     });
+
     totalPriceElement.textContent = total.toFixed(2);
+    
+    document.querySelectorAll('.quantity-btn').forEach(button => {
+        button.addEventListener('click', (e) => {
+            const index = parseInt(e.target.dataset.index);
+            const isPlus = e.target.classList.contains('plus');
+            
+      
+            if(isPlus) {
+                cart[index].productQuantity++;
+            } else {
+                if(cart[index].productQuantity > 1) {
+                    cart[index].productQuantity--;
+                }
+            }
+            cart[index].productTotal = cart[index].productPrice * cart[index].productQuantity;
+            localStorage.setItem('cart', JSON.stringify(cart));
+            displayCartItems();
+            updateCartCount();
+        });
+    });
+    document.querySelectorAll('.remove-item').forEach(button => {
+        button.addEventListener('click', (e) => {
+            const index = parseInt(e.target.dataset.index);
+            cart.splice(index, 1); 
+            localStorage.setItem('cart', JSON.stringify(cart));
+            displayCartItems(); 
+            updateCartCount();
+        });
+    });
+    
 }
-
-
 
 
 
