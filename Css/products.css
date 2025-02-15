@@ -214,7 +214,10 @@ border: none;
   }
   
   .cart-total {
-    text-align: right;
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    align-items:center;
     border-top: 2px solid #eee;
     padding-top: 15px;
   } 
@@ -267,19 +270,15 @@ border: none;
     min-width: 30px;
     text-align: center;
 }
-.cart-total{
-  position: relative;
-}
 
 .check-out {
-  position: absolute;
-  left: 45%;
-  top: 30%;
   background-color: #A67A4B;
+  text-align: center;
+  font-size: 1.3rem;
   border-radius: 10px;
   color: white;
   border: none;
-  padding: 10px 40px;
+  padding: 10px 30px;
   cursor: pointer;
   text-decoration: none;
 
@@ -287,3 +286,4 @@ border: none;
 .check-out:hover {
   background-color: #865b34;
 }
+
