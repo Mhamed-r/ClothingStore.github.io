@@ -686,11 +686,12 @@ input{
     }
 
     .underCategory {
+        
         margin-top: 50px;
         flex-direction: column;
         align-items: center;
         row-gap: 0;
-        height: 70vh;
+     
     }
 
 }
