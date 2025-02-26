@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
         displayCartItems();
     }
 });
-if(window.location.pathname.includes('home.html')) {
+if(window.location.pathname.includes('index.html')) {
 function reset() {
     for (let i = 0; i < sliderImages.length; i++) {
         sliderImages[i].style.display = "none";

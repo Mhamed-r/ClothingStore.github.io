@@ -46,7 +46,7 @@ function login() {
     document.cookie= `password=${password}; path=/`;
     document.cookie= `loggedIn=true; path=/`;
     alert("You have successfully logged in");
-    window.location.href="home.html";
+    window.location.href="index.html";
 
      // localStorage.setItem("userName", name);
     // localStorage.setItem("email", email);
